@@ -70,12 +70,11 @@
         }
       ]
     },
-    "designs":
-      [
-       {
-          "name": "Plane Jane"
-       }
-      ]
+    "designs": [
+      {
+        "name": "Plane Jane"
+      }
+    ]
   },
     "mission": {
         "segments": [
@@ -99,7 +98,7 @@
             {   
                 "name": "C",
                 "type": "climb",
-                "energy_network": "Climb Network",
+                "energy_network": "Fuel Energy Network",
                 "velocity": 83,
                 "altitude": [
                         500,
@@ -109,8 +108,8 @@
             },
             {
                 "name": "D",
-                "type": "cruise",
-                "energy_network_recharge": "Recharge Network",
+                "type": "recharge_cruise",
+                "energy_network_recharge": "Recharge",
                 "energy_network_prop": "Fuel Energy Network",
                 "velocity": 83,
                 "velocity_stall": 56.6,
@@ -314,8 +313,7 @@
           "name": "Turboshaft",
           "type": "engine.prop",
           "number": 1,
-          "efficiency": 0.88,
-          "mass": 50,
+          "mass": 200,
           "max_power": 200000,
           "position": {
             "cg": [
@@ -500,7 +498,8 @@
           {
             "name": "Turboshaft",
             "brake_specific_fuel_consumption": 4.25e-8,
-            "rating": 0.8
+            "rating": 0.8,
+            "fuel_weight_fraction": 0.35
           },
           {
             "name": "Generator"
@@ -517,13 +516,26 @@
           {
             "name": "Battery"
           },
-          {
-            "name": "Electric Motor 1",
-            "rating": 0.8
-          },
-          {
-            "name": "Propeller 1"
-          }
+          [
+            {
+              "name": "Electric Motor 1",
+              "rating": 0.8
+            },
+            {
+              "name": "Electric Motor 2",
+              "rating": 0.8
+            }
+          ],
+          [
+            {
+              "name": "Propeller 1",
+              "number": 2
+            },
+            {
+              "name": "Rotor 2",
+              "number": 2
+            }
+          ]
         ]
       }
     ]
