@@ -167,24 +167,16 @@
           "name": "Passenger",
           "type": "mass.point",
           "mass": 113,
-          "number": 8,
+          "number": 10,
           "position": {
             "cg": [
               [
-                1.5,
+                2.5,
                 -0.6
-              ],
-              [
-                1.5,
-                0.6
               ],
               [
                 2.5,
                 0.6
-              ],
-              [
-                2.5,
-                -0.6
               ],
               [
                 3.5,
@@ -200,6 +192,22 @@
               ],
               [
                 4.5,
+                -0.6
+              ],
+              [
+                5.5,
+                0.6
+              ],
+              [
+                5.5,
+                -0.6
+              ],
+              [
+                6.5,
+                0.6
+              ],
+              [
+                6.5,
                 -0.6
               ]
             ]
@@ -242,9 +250,9 @@
           },
           "sweep_le": 10.0,
           "taper_ratio": 0.4,
-          "mass": 0,
+          "mass": 200,
           "position": {
-            "leading_edge": 4.7
+            "leading_edge": 2
           }
         },
         {
@@ -273,7 +281,7 @@
           "type": "wing.secondary",
           "interf_factor": 1.0,
           "aspect_ratio": 5.0,
-          "span": 4,
+          "span": 5.5,
           "oswald_efficiency": 0.85,
           "airfoil": {
             "type": "naca0015",
@@ -286,7 +294,7 @@
           "taper_ratio": 0.8,
           "mass": 0,
           "position": {
-            "leading_edge": 5
+            "leading_edge": 6
           }
         },
         {
@@ -338,8 +346,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 3, -2 ],
-                [ 3, 2 ]
+                [ 3, -4 ],
+                [ 3, 4 ]
               ]
             }
           }
@@ -349,7 +357,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 2,
-          "radius": 0.8,
+          "radius": 0.5,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -361,8 +369,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 7, -2 ],
-                [ 7, 2 ]
+                [ 6.8, -2.5 ],
+                [ 6.8, 2.5 ]
               ]
             }
           }
@@ -370,22 +378,21 @@
         {
           "name": "Propeller 3",
           "type": "driver.prop",
-          "number": 2,
-          "number_blades": 2,
+          "number": 1,
+          "number_blades": 3,
           "radius": 0.8,
-          "rotor_solidity": 0.08,
+          "rotor_solidity": 0.1,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
           "tip_velocity": 200,
           "efficiency": 0.6,
           "coaxial": "No",
-          "ducted": "Yes",
+          "ducted": "No",
           "mass": 0,
           "position": {
             "cg": {
-              "vtol": [
-                [ 3, -2 ],
-                [ 3, 2 ]
+              "forward": [
+                [ 10, 0]
               ]
             }
           }
@@ -413,8 +420,8 @@
           "max_power": 300000,
           "position": {
             "cg": [
-              [ 7, -4 ],
-              [ 7, 4 ]
+              [ 6.8, -2.5 ],
+              [ 6.8, 2.5 ]
             ]
           }
         },
