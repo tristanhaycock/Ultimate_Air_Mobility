@@ -1,7 +1,7 @@
 {
   "concept": {
     "categories": {
-      "name": "Quadcopter Fuck Me",
+      "name": "Air Taxi Quadcopter",
       "pairs": [
         [
           1,
@@ -99,22 +99,23 @@
             {   
                 "name": "C",
                 "type": "climb",
-                "energy_network": "Fuel Energy Network",
+                "energy_network": "Climb Network",
                 "velocity": 83,
                 "altitude": [
                         500,
-                        4572
+                        3048
                     ],
                 "angle": 5
             },
             {
                 "name": "D",
                 "type": "cruise",
-                "energy_network": "Fuel Energy Network",
+                "energy_network_recharge": "Recharge Network",
+                "energy_network_prop": "Fuel Energy Network",
                 "velocity": 83,
                 "velocity_stall": 56.6,
                 "range": 300000,
-                "altitude": 4572
+                "altitude": 3048
             },
             {
                 "name": "E",
@@ -122,13 +123,13 @@
                 "energy_network": "Fuel Energy Network",
                 "velocity": -20.0,
                 "altitude": [
-                    4572,
+                    3048,
                     1000
                 ],
                 "angle": -5.0
             },
             {
-                "name": "E",
+                "name": "F",
                 "type": "hold",
                 "energy_network": "Fuel Energy Network",
                 "velocity": 60,
@@ -136,21 +137,21 @@
                 "time": 120
             },
             {
-                "name": "F",
+                "name": "G",
                 "type": "vertical_descent",
                 "energy_network": "Electric Vertical Energy Network",
                 "velocity": -5,
                 "altitude": [ 1000, 500 ]
             },
             {
-                "name": "G",
+                "name": "H",
                 "type": "hover",
                 "energy_network": "Electric Vertical Energy Network",
                 "altitude": 500,
                 "time": 15
             },
             {
-                "name": "H",
+                "name": "I",
                 "type": "vertical_descent",
                 "energy_network": "Electric Vertical Energy Network",
                 "velocity": -4,
@@ -233,19 +234,19 @@
           "aspect_ratio": 8.5,
           "span": 9,
           "oswald_efficiency": 0.85,
-            "airfoil": {
-              "type": "naca0015",
-              "tc_max": 0.15,
-              "xc_max": 0.3,
-              "lift_slope_coefficient": 6.2,
-              "cl_max": 2.0
-            },
-            "sweep_le": 10.0,
-            "taper_ratio": 0.4,
-            "mass": 0,
-            "position": {
-              "leading_edge": 4.7
-            }
+          "airfoil": {
+            "type": "naca0015",
+            "tc_max": 0.15,
+            "xc_max": 0.3,
+            "lift_slope_coefficient": 6.2,
+            "cl_max": 2.0
+          },
+          "sweep_le": 10.0,
+          "taper_ratio": 0.4,
+          "mass": 0,
+          "position": {
+            "leading_edge": 4.7
+          }
         },
         {
           "name": "Vertical Tail",
@@ -304,22 +305,22 @@
           "mass": 0,
           "position": {
             "cg": [
-              [5,0]
+              [ 4, 0 ]
             ]
           },
           "recharge_location": "BC_Canada"
         },
         {
-          "name": "Jet Engine",
-          "type": "engine.jet",
+          "name": "Turboshaft",
+          "type": "engine.prop",
           "number": 1,
           "efficiency": 0.88,
           "mass": 50,
           "max_power": 200000,
           "position": {
-            "cg":[ 
-              [ 8,0]
-          ]
+            "cg": [
+              [ 8, 0 ]
+            ]
           }
         },
         {
@@ -333,24 +334,24 @@
           "base_drag_coefficient": 0.02,
           "tip_velocity": 200,
           "efficiency": 0.6,
-          "coaxial": "Yes",
+          "coaxial": "No",
           "ducted": "Yes",
           "mass": 0,
           "position": {
             "cg": {
               "vtol": [
-                [ 3.5, -2 ],
-                [ 3.5, 2 ]
+                [ 3, -2 ],
+                [ 3, 2 ]
               ]
             }
           }
         },
         {
-          "name": "Propeller 2",
+          "name": "Rotor 2",
           "type": "driver.prop",
           "number": 2,
           "number_blades": 2,
-          "radius": 1.2,
+          "radius": 0.8,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -362,8 +363,31 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 8, -2 ],
-                [ 8, 2 ]
+                [ 7, -2 ],
+                [ 7, 2 ]
+              ]
+            }
+          }
+        },
+        {
+          "name": "Propeller 3",
+          "type": "driver.prop",
+          "number": 2,
+          "number_blades": 2,
+          "radius": 0.8,
+          "rotor_solidity": 0.08,
+          "induced_power_factor": 1.15,
+          "base_drag_coefficient": 0.02,
+          "tip_velocity": 200,
+          "efficiency": 0.6,
+          "coaxial": "No",
+          "ducted": "Yes",
+          "mass": 0,
+          "position": {
+            "cg": {
+              "vtol": [
+                [ 3, -2 ],
+                [ 3, 2 ]
               ]
             }
           }
@@ -371,16 +395,28 @@
         {
           "name": "Electric Motor 1",
           "type": "motor.prop",
-          "number": 4,
+          "number": 2,
           "efficiency": 0.88,
           "mass": 0,
           "max_power": 300000,
           "position": {
             "cg": [
-              [ 5.5, -4 ],
-              [ 5.5, 4 ],
-              [ 8, -2 ],
-              [ 8, 2 ]
+              [ 3, -4 ],
+              [ 3, 4 ]
+            ]
+          }
+        },
+        {
+          "name": "Electric Motor 2",
+          "type": "motor.prop",
+          "number": 2,
+          "efficiency": 0.88,
+          "mass": 0,
+          "max_power": 300000,
+          "position": {
+            "cg": [
+              [ 7, -4 ],
+              [ 7, 4 ]
             ]
           }
         },
@@ -392,54 +428,104 @@
           "mass": 0,
           "position": {
             "cg": [
-              [6,0]
+              [ 4, 0 ]
+            ]
+          }
+        },
+        {
+          "name": "Generator",
+          "type": "generator",
+          "efficiency": 0.96,
+          "mass": 100,
+          "number": 1,
+          "position": {
+            "cg": [
+              [ 6, 0 ]
             ]
           }
         }
       ]
     },
-    "energy": {
-      "networks": [
-        {
-          "name": "Electric Vertical Energy Network",
-          "layout": [
+  "energy": {
+    "networks": [
+      {
+        "name": "Electric Vertical Energy Network",
+        "layout": [
+          {
+            "name": "Battery",
+            "battery_energy_fraction": 0.7
+          },
+          [
             {
-              "name": "Battery",
-              "battery_energy_fraction": 0.7
-            },
-            [
-              {
-                "name": "Electric Motor 1",
-                "rating": 0.8
-              },
-              {
-                "name": "Electric Motor 2",
-                "rating": 0.8
-              }
-            ],
-            [
-              {
-                "name": "Propeller 1"
-              },
-              {
-                "name": "Propeller 2"
-              }
-            ]
-          ]
-        },
-        {
-          "name": "Fuel Energy Network",
-          "layout": [
-            {
-              "name": "Fuel Tank"
+              "name": "Electric Motor 1",
+              "rating": 0.8
             },
             {
-              "name": "Jet Engine",
-              "specific_fuel_consumption": 4.25e-8,
-              "rating": 0.80
+              "name": "Electric Motor 2",
+              "rating": 0.8
+            }
+          ],
+          [
+            {
+              "name": "Propeller 1"
+            },
+            {
+              "name": "Rotor 2"
             }
           ]
-        }
-      ]
-    }
+        ]
+      },
+      {
+        "name": "Fuel Energy Network",
+        "layout": [
+          {
+            "name": "Fuel Tank"
+          },
+          {
+            "name": "Turboshaft",
+            "brake_specific_fuel_consumption": 4.25e-8,
+            "rating": 0.80
+          },
+          {
+            "name": "Propeller 3"
+          }
+        ]
+      },
+      {
+        "name": "Recharge",
+        "layout": [
+          {
+            "name": "Fuel Tank"
+          },
+          {
+            "name": "Turboshaft",
+            "brake_specific_fuel_consumption": 4.25e-8,
+            "rating": 0.8
+          },
+          {
+            "name": "Generator"
+          },
+          {
+            "name": "Battery",
+            "efficiency": 1.0
+          }
+        ]
+      },
+      {
+        "name": "Electric Cruise",
+        "layout": [
+          {
+            "name": "Battery"
+          },
+          {
+            "name": "Electric Motor 1",
+            "rating": 0.8
+          },
+          {
+            "name": "Propeller 1"
+          }
+        ]
+      }
+    ]
+  }
 }
