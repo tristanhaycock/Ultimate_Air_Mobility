@@ -82,7 +82,7 @@
                 "name": "A",
                 "type": "vertical_climb",
                 "energy_network": "Electric Vertical Energy Network",
-                "velocity": 8,
+                "velocity": 4,
                 "altitude": [
                     0,
                     500
@@ -121,7 +121,7 @@
                 "name": "E",
                 "type": "descent",
                 "energy_network": "Fuel Energy Network",
-                "velocity": -20.0,
+                "velocity": 60.0,
                 "altitude": [
                     3048,
                     1000
