@@ -111,6 +111,7 @@
                 "type": "recharge_cruise",
                 "energy_network_recharge": "Recharge",
                 "energy_network_prop": "Fuel Energy Network",
+                "energy_network":  "Electric Cruise",
                 "velocity": 83,
                 "velocity_stall": 56.6,
                 "range": 300000,
@@ -167,7 +168,7 @@
           "name": "Passenger",
           "type": "mass.point",
           "mass": 113,
-          "number": 10,
+          "number": 8,
           "position": {
             "cg": [
               [
@@ -201,14 +202,6 @@
               [
                 5.5,
                 -0.6
-              ],
-              [
-                6.5,
-                0.6
-              ],
-              [
-                6.5,
-                -0.6
               ]
             ]
           }
@@ -216,7 +209,7 @@
         {
           "name": "Empty Mass",
           "type": "mass.empty",
-          "mass": 1500,
+          "mass": 0,
           "material": "composites",
           "equation": {
             "type": "ax^(1+c)",
@@ -229,7 +222,7 @@
           "type": "fuselage",
           "interf_factor": 1.0,
           "diameter": 2.2,
-          "length": 10.0,
+          "length": 8.0,
           "mass": 250,
           "diameters": [ 0.5, 0.7, 0.8, 1, 1.2, 1.8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1 ]
         },
@@ -273,7 +266,7 @@
           "sweep_le": 10.0,
           "taper_ratio": 0.4,
           "position": {
-            "leading_edge": 9
+            "leading_edge": 7.5
           }
         },
         {
@@ -294,7 +287,7 @@
           "taper_ratio": 0.8,
           "mass": 250,
           "position": {
-            "leading_edge": 6
+            "leading_edge": 5
           }
         },
         {
@@ -325,7 +318,7 @@
           "max_power": 200000,
           "position": {
             "cg": [
-              [ 8, 0 ]
+              [ 6, 0 ]
             ]
           }
         },
@@ -369,8 +362,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 6.8, -2.5 ],
-                [ 6.8, 2.5 ]
+                [ 5.8, -2.5 ],
+                [ 5.8, 2.5 ]
               ]
             }
           }
@@ -392,7 +385,7 @@
           "position": {
             "cg": {
               "forward": [
-                [ 10, 0]
+                [ 8, 0]
               ]
             }
           }
@@ -420,8 +413,8 @@
           "max_power": 300000,
           "position": {
             "cg": [
-              [ 6.8, -2.5 ],
-              [ 6.8, 2.5 ]
+              [ 5.8, -2.5 ],
+              [ 5.8, 2.5 ]
             ]
           }
         },
@@ -504,7 +497,7 @@
           },
           {
             "name": "Turboshaft",
-            "brake_specific_fuel_consumption": 4.25e-8,
+            "brake_specific_fuel_consumption": 1.5e-8,
             "rating": 0.8,
             "fuel_weight_fraction": 0.35
           },
