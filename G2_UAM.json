@@ -216,7 +216,7 @@
         {
           "name": "Empty Mass",
           "type": "mass.empty",
-          "mass": 0,
+          "mass": 1500,
           "material": "composites",
           "equation": {
             "type": "ax^(1+c)",
@@ -230,7 +230,7 @@
           "interf_factor": 1.0,
           "diameter": 2.2,
           "length": 10.0,
-          "mass": 0,
+          "mass": 250,
           "diameters": [ 0.5, 0.7, 0.8, 1, 1.2, 1.8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1 ]
         },
         {
@@ -241,6 +241,7 @@
           "aspect_ratio": 8.5,
           "span": 9,
           "oswald_efficiency": 0.85,
+          "mass": 300,
           "airfoil": {
             "type": "naca0015",
             "tc_max": 0.15,
@@ -250,7 +251,6 @@
           },
           "sweep_le": 10.0,
           "taper_ratio": 0.4,
-          "mass": 200,
           "position": {
             "leading_edge": 2
           }
@@ -261,6 +261,7 @@
           "interf_factor": 1.0,
           "aspect_ratio": 5.0,
           "half_span": 0.5,
+          "mass": 100,
           "oswald_efficiency": 0.85,
           "airfoil": {
             "type": "naca0015",
@@ -271,7 +272,6 @@
           },
           "sweep_le": 10.0,
           "taper_ratio": 0.4,
-          "mass": 0,
           "position": {
             "leading_edge": 9
           }
@@ -292,7 +292,7 @@
           },
           "sweep_le": 5,
           "taper_ratio": 0.8,
-          "mass": 0,
+          "mass": 250,
           "position": {
             "leading_edge": 6
           }
@@ -309,7 +309,7 @@
             "parallel": 8
           },
           "volt": 12,
-          "mass": 0,
+          "mass": 450,
           "position": {
             "cg": [
               [ 4, 0 ]
@@ -321,7 +321,7 @@
           "name": "Turboshaft",
           "type": "engine.prop",
           "number": 1,
-          "mass": 200,
+          "mass": 198,
           "max_power": 200000,
           "position": {
             "cg": [
@@ -330,7 +330,7 @@
           }
         },
         {
-          "name": "Propeller 1",
+          "name": "Tilt Rotors",
           "type": "driver.prop",
           "number": 2,
           "number_blades": 2,
@@ -342,7 +342,7 @@
           "efficiency": 0.6,
           "coaxial": "No",
           "ducted": "Yes",
-          "mass": 0,
+          "mass": 60,
           "position": {
             "cg": {
               "vtol": [
@@ -353,7 +353,7 @@
           }
         },
         {
-          "name": "Rotor 2",
+          "name": "Fixed Rotors",
           "type": "driver.prop",
           "number": 2,
           "number_blades": 2,
@@ -365,7 +365,7 @@
           "efficiency": 0.6,
           "coaxial": "No",
           "ducted": "Yes",
-          "mass": 0,
+          "mass": 60,
           "position": {
             "cg": {
               "vtol": [
@@ -376,7 +376,7 @@
           }
         },
         {
-          "name": "Propeller 3",
+          "name": "Push Propeller",
           "type": "driver.prop",
           "number": 1,
           "number_blades": 3,
@@ -388,7 +388,7 @@
           "efficiency": 0.6,
           "coaxial": "No",
           "ducted": "No",
-          "mass": 0,
+          "mass": 60,
           "position": {
             "cg": {
               "forward": [
@@ -398,11 +398,11 @@
           }
         },
         {
-          "name": "Electric Motor 1",
+          "name": "Tilt Motors",
           "type": "motor.prop",
           "number": 2,
           "efficiency": 0.88,
-          "mass": 0,
+          "mass": 120,
           "max_power": 300000,
           "position": {
             "cg": [
@@ -412,11 +412,11 @@
           }
         },
         {
-          "name": "Electric Motor 2",
+          "name": "Fixed Motors",
           "type": "motor.prop",
           "number": 2,
           "efficiency": 0.88,
-          "mass": 0,
+          "mass": 120,
           "max_power": 300000,
           "position": {
             "cg": [
@@ -462,20 +462,20 @@
           },
           [
             {
-              "name": "Electric Motor 1",
+              "name": "Tilt Motors",
               "rating": 0.8
             },
             {
-              "name": "Electric Motor 2",
+              "name": "Fixed Motors",
               "rating": 0.8
             }
           ],
           [
             {
-              "name": "Propeller 1"
+              "name": "Tilt Rotors"
             },
             {
-              "name": "Rotor 2"
+              "name": "Fixed Rotors"
             }
           ]
         ]
@@ -492,7 +492,7 @@
             "rating": 0.80
           },
           {
-            "name": "Propeller 3"
+            "name": "Push Propeller"
           }
         ]
       },
@@ -525,21 +525,21 @@
           },
           [
             {
-              "name": "Electric Motor 1",
+              "name": "Tilt Motors",
               "rating": 0.8
             },
             {
-              "name": "Electric Motor 2",
+              "name": "Fixed Motors",
               "rating": 0.8
             }
           ],
           [
             {
-              "name": "Propeller 1",
+              "name": "Tilt Rotors",
               "number": 2
             },
             {
-              "name": "Rotor 2",
+              "name": "Fixed Rotors",
               "number": 2
             }
           ]
