@@ -93,7 +93,7 @@
                 "type": "hover",
                 "energy_network": "Electric Vertical Energy Network",
                 "altitude": 500,
-                "time": 15 
+                "time": 5 
             },
             {   
                 "name": "C",
@@ -108,13 +108,12 @@
             },
             {
                 "name": "D",
-                "type": "recharge_cruise",
-                "energy_network_recharge": "Recharge",
-                "energy_network_prop": "Fuel Energy Network",
-                "energy_network":  "Electric Cruise",
+                "type": "hybrid_cruise",
+                "energy_network_fuel": "Fuel Energy Network",
+                "energy_network_battery": "Electric Cruise",
                 "velocity": 83,
                 "velocity_stall": 56.6,
-                "range": 300000,
+                "range": 150000,
                 "altitude": 3048
             },
             {
@@ -148,7 +147,7 @@
                 "type": "hover",
                 "energy_network": "Electric Vertical Energy Network",
                 "altitude": 500,
-                "time": 15
+                "time": 5
             },
             {
                 "name": "I",
@@ -168,7 +167,7 @@
           "name": "Passenger",
           "type": "mass.point",
           "mass": 113,
-          "number": 8,
+          "number": 6,
           "position": {
             "cg": [
               [
@@ -194,27 +193,8 @@
               [
                 4.5,
                 -0.6
-              ],
-              [
-                5.5,
-                0.6
-              ],
-              [
-                5.5,
-                -0.6
               ]
             ]
-          }
-        },
-        {
-          "name": "Empty Mass",
-          "type": "mass.empty",
-          "mass": 0,
-          "material": "composites",
-          "equation": {
-            "type": "ax^(1+c)",
-            "a": 0.92,
-            "c": -0.05
           }
         },
         {
@@ -223,7 +203,7 @@
           "interf_factor": 1.0,
           "diameter": 2.2,
           "length": 8.0,
-          "mass": 250,
+          "mass": 200,
           "diameters": [ 0.5, 0.7, 0.8, 1, 1.2, 1.8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1 ]
         },
         {
@@ -231,10 +211,10 @@
           "type": "wing.main",
           "interf_factor": 1.0,
           "lift_to_drag_ratio": 11,
-          "aspect_ratio": 8.5,
+          "aspect_ratio": 5,
           "span": 9,
           "oswald_efficiency": 0.85,
-          "mass": 300,
+          "mass": 200,
           "airfoil": {
             "type": "naca0015",
             "tc_max": 0.15,
@@ -285,7 +265,7 @@
           },
           "sweep_le": 5,
           "taper_ratio": 0.8,
-          "mass": 250,
+          "mass": 100,
           "position": {
             "leading_edge": 5
           }
@@ -293,16 +273,16 @@
         {
           "name": "Battery",
           "type": "energy.electric",
-          "source_type": "Li-ion",
-          "efficiency": 0.9,
-          "usable_fraction": 0.80,
+          "source_type": "Li-S",
+          "efficiency": 0.95,
+          "usable_fraction": 0.90,
           "reserve": 0.15,
           "number_packs": {
             "series": 4,
             "parallel": 8
           },
           "volt": 12,
-          "mass": 450,
+          "mass": 400,
           "position": {
             "cg": [
               [ 4, 0 ]
@@ -314,8 +294,8 @@
           "name": "Turboshaft",
           "type": "engine.prop",
           "number": 1,
-          "mass": 198,
-          "max_power": 200000,
+          "mass": 148,
+          "max_power": 410000,
           "position": {
             "cg": [
               [ 6, 0 ]
@@ -335,7 +315,7 @@
           "efficiency": 0.6,
           "coaxial": "No",
           "ducted": "Yes",
-          "mass": 60,
+          "mass": 40,
           "position": {
             "cg": {
               "vtol": [
@@ -358,7 +338,7 @@
           "efficiency": 0.6,
           "coaxial": "No",
           "ducted": "Yes",
-          "mass": 60,
+          "mass": 30,
           "position": {
             "cg": {
               "vtol": [
@@ -373,7 +353,7 @@
           "type": "driver.prop",
           "number": 1,
           "number_blades": 3,
-          "radius": 0.8,
+          "radius": 2,
           "rotor_solidity": 0.1,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -395,8 +375,8 @@
           "type": "motor.prop",
           "number": 2,
           "efficiency": 0.88,
-          "mass": 120,
-          "max_power": 300000,
+          "mass": 60,
+          "max_power": 400000,
           "position": {
             "cg": [
               [ 3, -4 ],
@@ -409,8 +389,8 @@
           "type": "motor.prop",
           "number": 2,
           "efficiency": 0.88,
-          "mass": 120,
-          "max_power": 300000,
+          "mass": 60,
+          "max_power": 400000,
           "position": {
             "cg": [
               [ 5.8, -2.5 ],
@@ -429,18 +409,6 @@
               [ 4, 0 ]
             ]
           }
-        },
-        {
-          "name": "Generator",
-          "type": "generator",
-          "efficiency": 0.96,
-          "mass": 100,
-          "number": 1,
-          "position": {
-            "cg": [
-              [ 6, 0 ]
-            ]
-          }
         }
       ]
     },
@@ -456,11 +424,11 @@
           [
             {
               "name": "Tilt Motors",
-              "rating": 0.8
+              "rating": 0.9
             },
             {
               "name": "Fixed Motors",
-              "rating": 0.8
+              "rating": 0.9
             }
           ],
           [
@@ -490,52 +458,19 @@
         ]
       },
       {
-        "name": "Recharge",
-        "layout": [
-          {
-            "name": "Fuel Tank"
-          },
-          {
-            "name": "Turboshaft",
-            "brake_specific_fuel_consumption": 1.5e-8,
-            "rating": 0.8,
-            "fuel_weight_fraction": 0.35
-          },
-          {
-            "name": "Generator"
-          },
-          {
-            "name": "Battery",
-            "efficiency": 1.0
-          }
-        ]
-      },
-      {
         "name": "Electric Cruise",
         "layout": [
           {
-            "name": "Battery"
+            "name": "Battery",
+            "battery_energy_fraction": 0.1
           },
-          [
             {
               "name": "Tilt Motors",
               "rating": 0.8
             },
             {
-              "name": "Fixed Motors",
-              "rating": 0.8
+              "name": "Tilt Rotors"
             }
-          ],
-          [
-            {
-              "name": "Tilt Rotors",
-              "number": 2
-            },
-            {
-              "name": "Fixed Rotors",
-              "number": 2
-            }
-          ]
         ]
       }
     ]
