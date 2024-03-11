@@ -112,7 +112,7 @@
                 "energy_network_fuel": "Fuel Energy Network",
                 "energy_network_battery": "Electric Cruise",
                 "velocity": 83,
-                "velocity_stall": 56.6,
+                "velocity_stall": 42.6,
                 "range": 150000,
                 "altitude": 3048
             },
@@ -216,11 +216,11 @@
           "oswald_efficiency": 0.85,
           "mass": 200,
           "airfoil": {
-            "type": "naca0015",
-            "tc_max": 0.15,
-            "xc_max": 0.3,
-            "lift_slope_coefficient": 6.2,
-            "cl_max": 2.0
+            "type": "naca4424",
+            "tc_max": 0.24,
+            "xc_max": 0.294,
+            "lift_slope_coefficient": 9.75,
+            "cl_max": 1.5
           },
           "sweep_le": 10.0,
           "taper_ratio": 0.4,
@@ -254,10 +254,10 @@
           "type": "wing.secondary",
           "interf_factor": 1.0,
           "aspect_ratio": 5.0,
-          "span": 5.5,
+          "span": 7,
           "oswald_efficiency": 0.85,
           "airfoil": {
-            "type": "naca0015",
+            "type": "naca 66-206",
             "tc_max": 0.15,
             "xc_max": 0.3,
             "lift_slope_coefficient": 6.2,
@@ -267,7 +267,7 @@
           "taper_ratio": 0.8,
           "mass": 100,
           "position": {
-            "leading_edge": 5
+            "leading_edge": 6
           }
         },
         {
@@ -307,7 +307,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 2.5,
+          "radius": 2,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -319,8 +319,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 3, -4 ],
-                [ 3, 4 ]
+                [ 3.1, -4.25 ],
+                [ 3.1, 4.25 ]
               ]
             }
           }
@@ -330,7 +330,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 2.5,
+          "radius": 2,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -342,8 +342,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 5.8, -2.5 ],
-                [ 5.8, 2.5 ]
+                [ 6.9, -3.0 ],
+                [ 6.9, 3.0 ]
               ]
             }
           }
@@ -351,9 +351,9 @@
         {
           "name": "Push Propeller",
           "type": "driver.prop",
-          "number": 1,
+          "number": 1.25,
           "number_blades": 3,
-          "radius": 2,
+          "radius": 1.5,
           "rotor_solidity": 0.1,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -374,13 +374,13 @@
           "name": "Tilt Motors",
           "type": "motor.prop",
           "number": 2,
-          "efficiency": 0.88,
+          "efficiency": 0.9,
           "mass": 80,
           "max_power": 800000,
           "position": {
             "cg": [
-              [ 3, -4 ],
-              [ 3, 4 ]
+              [ 3.1, -4.25 ],
+              [ 3.1, 4.25 ]
             ]
           }
         },
@@ -388,13 +388,13 @@
           "name": "Fixed Motors",
           "type": "motor.prop",
           "number": 2,
-          "efficiency": 0.88,
+          "efficiency": 0.9,
           "mass": 80,
           "max_power": 800000,
           "position": {
             "cg": [
-              [ 5.8, -2.5 ],
-              [ 5.8, 2.5 ]
+              [ 6.9, -3.0 ],
+              [ 6.9, 3.0  ]
             ]
           }
         },
