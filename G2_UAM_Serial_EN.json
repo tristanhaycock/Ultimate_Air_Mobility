@@ -294,8 +294,8 @@
           "name": "Turboshaft",
           "type": "engine.prop",
           "number": 1,
-          "mass": 62,
-          "max_power": 1800000,
+          "mass": 198,
+          "max_power": 1210000,
           "position": {
             "cg": [
               [ 6, 0 ]
