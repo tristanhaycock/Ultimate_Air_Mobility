@@ -211,16 +211,16 @@
           "type": "wing.main",
           "interf_factor": 1.0,
           "lift_to_drag_ratio": 11,
-          "aspect_ratio": 8,
+          "aspect_ratio":5.6,
           "span": 10,
           "oswald_efficiency": 0.85,
           "mass": 200,
           "airfoil": {
-            "type": "naca4424",
+            "type": "naca23024",
             "tc_max": 0.24,
-            "xc_max": 0.294,
-            "lift_slope_coefficient": 9.75,
-            "cl_max": 1.5
+            "xc_max": 0.15,
+            "lift_slope_coefficient": 0.105,
+            "cl_max": 15
           },
           "sweep_le": 10.0,
           "taper_ratio": 0.9,
@@ -253,15 +253,15 @@
           "name": "Tandem_Wing",
           "type": "wing.secondary",
           "interf_factor": 1.0,
-          "aspect_ratio": 8,
-          "span": 7,
+          "aspect_ratio": 3.5,
+          "span": 6,
           "oswald_efficiency": 0.85,
           "airfoil": {
-            "type": "naca 66-206",
+            "type": "naca 64-215",
             "tc_max": 0.15,
-            "xc_max": 0.3,
-            "lift_slope_coefficient": 6.2,
-            "cl_max": 2.0
+            "xc_max": 0.349,
+            "lift_slope_coefficient": 0.1,
+            "cl_max": 12
           },
           "sweep_le": 2,
           "taper_ratio": 0.8,
@@ -307,7 +307,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 2,
+          "radius": 1.5,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -319,8 +319,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 6.9, -4.25 ],
-                [ 6.9, 4.25 ]
+                [ 7.1, -4.25 ],
+                [ 7.1, 4.25 ]
               ]
             }
           }
@@ -330,7 +330,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 2,
+          "radius": 1.5,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -342,30 +342,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 2.5, -3.2 ],
-                [ 2.5, 3.2 ]
-              ]
-            }
-          }
-        },
-        {
-          "name": "Push Propeller",
-          "type": "driver.prop",
-          "number": 1.25,
-          "number_blades": 3,
-          "radius": 1.5,
-          "rotor_solidity": 0.1,
-          "induced_power_factor": 1.15,
-          "base_drag_coefficient": 0.02,
-          "tip_velocity": 200,
-          "efficiency": 0.6,
-          "coaxial": "No",
-          "ducted": "No",
-          "mass": 60,
-          "position": {
-            "cg": {
-              "forward": [
-                [ 8, 0 ]
+                [ 2.5, -3.0 ],
+                [ 2.5, 3.0 ]
               ]
             }
           }
@@ -379,8 +357,8 @@
           "max_power": 800000,
           "position": {
             "cg": [
-              [ 6.9, -4.25 ],
-              [ 6.9, 4.25 ]
+              [ 7.1, -4.25 ],
+              [ 7.1, 4.25 ]
             ]
           }
         },
@@ -393,8 +371,8 @@
           "max_power": 800000,
           "position": {
             "cg": [
-              [ 2.5, -3.2 ],
-              [ 2.5, 3.2 ]
+              [ 2.5, -3.0 ],
+              [ 2.5, 3.0 ]
             ]
           }
         },
@@ -545,9 +523,6 @@
           },
           {
             "name": "Tilt Rotors"
-          },
-          {
-            "name": "Push Propeller"
           }
         ]
       },
