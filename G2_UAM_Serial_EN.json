@@ -222,7 +222,7 @@
             "lift_slope_coefficient": 0.105,
             "cl_max": 15
           },
-          "sweep_le": 10.0,
+          "sweep_le": 0,
           "taper_ratio": 0.9,
           "position": {
             "leading_edge": 5.5
@@ -263,7 +263,7 @@
             "lift_slope_coefficient": 0.1,
             "cl_max": 12
           },
-          "sweep_le": 2,
+          "sweep_le": 0,
           "taper_ratio": 0.8,
           "mass": 100,
           "position": {
@@ -307,7 +307,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 1.5,
+          "radius": 1.75,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -319,8 +319,8 @@
           "position": {
             "cg": {
               "vtol": [
-                [ 7.1, -4.25 ],
-                [ 7.1, 4.25 ]
+                [ 6, -5 ],
+                [ 6, 5 ]
               ]
             }
           }
@@ -330,7 +330,7 @@
           "type": "driver.prop",
           "number": 2,
           "number_blades": 3,
-          "radius": 1.5,
+          "radius": 1.75,
           "rotor_solidity": 0.08,
           "induced_power_factor": 1.15,
           "base_drag_coefficient": 0.02,
@@ -357,8 +357,8 @@
           "max_power": 800000,
           "position": {
             "cg": [
-              [ 7.1, -4.25 ],
-              [ 7.1, 4.25 ]
+              [ 6, -5 ],
+              [6, 5 ]
             ]
           }
         },
